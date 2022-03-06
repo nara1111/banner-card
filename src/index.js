@@ -274,10 +274,7 @@ class BannerCard extends LitElement {
       `;
     } else if (image === true) {
       return html`
-        <state-badge
-          style="background-image: url(${value});"
-          @click=${click}
-        ></state-badge>
+        <state-badge .overrideImage=${value} @click=${click}></state-badge>
       `;
     }
 
