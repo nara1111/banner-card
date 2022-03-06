@@ -1,13 +1,14 @@
 {
   "name": "banner-card",
   "version": "0.13.1",
-  "main": "index.js",
+  "main": "banner-card.js",
   "author": "Raymond Julin <raymond.julin@gmail.com>",
   "description": "A fluffy banner card for Home Assistant",
   "license": "MIT",
   "scripts": {
     "test": "ava",
-    "build": "NODE_ENV=production rollup -c"
+    "build": "NODE_ENV=production rollup -c",
+    "release": "release-it --minor --ci"
   },
   "dependencies": {
     "lit-element": "^2.4.0"
@@ -35,11 +36,17 @@
     }
   },
   "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
     "github": {
       "release": true,
       "assets": [
         "banner-card.*"
       ]
+    },
+    "npm": {
+      "publish": false
     },
     "hooks": {
       "before:init": "yarn build",
