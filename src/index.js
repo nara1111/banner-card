@@ -416,9 +416,9 @@ class BannerCard extends LitElement {
         ${entityName(name, onClick)}
         <div class="entity-value row">
           <button 
-            ?disabled=${r}
+            ?disabled=${isopen}
             role="button"
-            class="cover-button ${r}"
+            class="cover-button"
             @click=${this._service("cover","open_cover",n)}
           >
             <ha-icon
@@ -428,7 +428,7 @@ class BannerCard extends LitElement {
           <button
             ?disabled=${r}
             role="button"
-            class="cover-button ${r}"
+            class="cover-button"
             @click=${this._service("cover","stop_cover",n)}
           >
             <ha-icon
@@ -436,9 +436,9 @@ class BannerCard extends LitElement {
             />
           </button>
           <button 
-            ?disabled=${r}
+            ?disabled=${isclosed}
             role="button"
-            class="cover-button ${r}"
+            class="cover-button"
             @click=${this._service("cover","close_cover",n)}
           >
             <ha-icon
